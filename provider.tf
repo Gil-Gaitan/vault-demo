@@ -9,6 +9,5 @@ terraform {
 
 provider "aws" {
   region  = "us-east-1"
-  profile = "default" # or however your AWS credentials are set up
+  profile = "default" # or however you auth
 }
-

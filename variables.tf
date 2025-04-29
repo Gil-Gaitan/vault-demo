@@ -7,7 +7,9 @@ variable "subnet_cidr" {
 }
 
 variable "instance_type" {
-  default = "t3.micro"
+  description = "Type of instance to launch"
+  type        = string
+  default     = "t3.micro"
 }
 
 variable "key_name" {
@@ -15,5 +17,12 @@ variable "key_name" {
 }
 
 variable "ami_id" {
-  default = "ami-02029c87fa31fb148"
+  description = "AMI ID to use for the instance"
+  type        = string
+}
+
+variable "availability_zone" {
+  description = "Availability Zone for EC2 instance"
+  type        = string
+  default     = "us-east-1b" # default to what you want
 }
