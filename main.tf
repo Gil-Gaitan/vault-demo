@@ -63,7 +63,29 @@ resource "aws_instance" "vault_server" {
   key_name                    = var.key_name
   availability_zone           = var.availability_zone
 
+  user_data = <<-EOF
+              #!/bin/bash
+              set -e
+
+              apt-get update -y
+              apt-get install -y unzip curl
+
+              sleep 5
+
+              cd /tmp
+              curl -O https://releases.hashicorp.com/vault/1.15.4/vault_1.15.4_linux_amd64.zip
+
+              unzip vault_1.15.4_linux_amd64.zip
+              mv vault /usr/local/bin/vault
+
+              vault --version
+
+              rm -f vault_1.15.4_linux_amd64.zip
+              EOF
+
+
   tags = {
     Name = "VaultServer"
   }
 }
+

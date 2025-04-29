@@ -3,8 +3,11 @@ variable "vpc_cidr" {
 }
 
 variable "subnet_cidr" {
-  default = "10.0.1.0/24"
+  description = "CIDR block for Subnet"
+  type        = string
+  default     = "10.0.1.0/24"
 }
+
 
 variable "instance_type" {
   description = "Type of instance to launch"
