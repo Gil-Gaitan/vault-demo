@@ -4,3 +4,6 @@
 terraform.tfvars
 *.ovpn
 vault-dem0.ovpn
+.Phase-Outline.md
+.certs
+terraform.lock.hcl
