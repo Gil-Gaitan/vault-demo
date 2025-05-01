@@ -1,8 +1,9 @@
-# Create a VPC
+# When creating a new AWS VPC, you must assign a CIDR block.
+# /24 allows for 256 IP addresses.
+# 
 resource "aws_vpc" "vault_vpc" { # Create a VPC for Vault
   cidr_block = var.vpc_cidr      # CIDR block for the VPC as variable
 }                                # Default is 10.0.0.0/24" 
-# 
 
 # Create an Internet Gateway
 resource "aws_internet_gateway" "vault_igw" {
