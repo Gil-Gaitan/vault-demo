@@ -8,7 +8,7 @@ resource "aws_acm_certificate" "vpn_cert" {
 resource "aws_ec2_client_vpn_endpoint" "vault_vpn" {
   description            = "Vault VPN Demo"
   server_certificate_arn = aws_acm_certificate.vpn_cert.arn
-  client_cidr_block      = "10.10.0.0/22" # VPN clients get IPs here
+  client_cidr_block      = "10.10.0.0/24" # VPN clients get IPs here
   split_tunnel           = true
   vpc_id                 = aws_vpc.vault_vpc.id # VPC ID for the VPN
   self_service_portal    = "enabled"

@@ -11,3 +11,4 @@ certs/vpn-server-key.pem
 certs/vpn-server-cert.pem
 certs/vpn-server.csr
 terraform.tfstate.backup
+vault-demo.ovpn

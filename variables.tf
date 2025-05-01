@@ -16,6 +16,7 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "Name of AWS SSH Key Pair"
+
 }
 
 variable "ami_id" {
