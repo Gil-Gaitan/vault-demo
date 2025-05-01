@@ -1,7 +1,8 @@
 # Create a VPC
-resource "aws_vpc" "vault_vpc" {
-  cidr_block = var.vpc_cidr
-}
+resource "aws_vpc" "vault_vpc" { # Create a VPC for Vault
+  cidr_block = var.vpc_cidr      # CIDR block for the VPC as variable
+}                                # Default is 10.0.0.0/24" 
+# 
 
 # Create an Internet Gateway
 resource "aws_internet_gateway" "vault_igw" {
